@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Using React typescript Corejs",
   "scripts": {
-    "test": "jest",
+    "test": "jest ./test",
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production",

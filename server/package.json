@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "init": "jest --init",
     "test": "jest --config jest.config.js",
     "start": "nodemon --watch './public/**' --exec 'ts-node' www.ts"
   },
@@ -30,5 +31,6 @@
     "express": "^4.17.1",
     "helmet": "^4.1.1",
     "morgan": "^1.10.0"
-  }
+  },
+  "license": "MIT"
 }
