@@ -1,7 +1,6 @@
 import express from 'express';
 import ejs from 'ejs';
 
-
 const app: express.Application = express();
 
 app.get("/", function(req:express.Request, res:express.Response, next: express.NextFunction){
