@@ -6,7 +6,7 @@
   "scripts": {
     "init": "jest --init",
     "test": "jest --config jest.config.js",
-    "start": "nodemon --watch './public/**' --exec 'ts-node' www.ts"
+    "start": "nodemon --watch './public/**' --exec \"ts-node\" www.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.13.15",
