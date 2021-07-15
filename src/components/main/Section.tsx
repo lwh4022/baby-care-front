@@ -13,7 +13,12 @@ export default function(){
             <Typography variant="h3" component="h5">
                 Coach
             </Typography>
-            <ShortCardLayout />
+            <ShortCardLayout stateName="coach"/>
+
+            <Typography variant="h3" component="h5">
+                Contents
+            </Typography>
+            <ShortCardLayout stateName="babyInfo"/>
             </div>
             <div style={{width:'25%'}}></div>
         </div>

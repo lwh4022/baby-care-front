@@ -7,40 +7,48 @@ import CardContent from '@material-ui/core/CardContent';
 import { Typography } from '@material-ui/core';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import { RootState } from '../../store/Store';
-import { useDispatch, useSelector } from 'react-redux';
 
 const useStyles = makeStyles({
     root: {
       maxWidth: 345,
+      minWidth: 300,
     },
     media: {
       height: 140,
     },
   });
 
-export default function (){
+export interface CardProp {
+    imgUrl : string
+    name : string
+    description: string | undefined
+}
+
+export default function (props: CardProp){
 
     const classes = useStyles();
 
-    const state = useSelector((state : RootState) => state.coach)
-    const dispatch = useDispatch();
+    
 
     return (
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image={state.imgUrl}
+                    image={props.imgUrl}
                     title="person"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {state.name}
+                        {props.name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        {state.description}
-                    </Typography>
+                    {
+                        props.description ? 
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {props.description}
+                        </Typography> : 
+                        <div></div>
+                    }
                 </CardContent>
             </CardActionArea>
             <CardActions>

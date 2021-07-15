@@ -1,15 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CardProp } from "../../components/card/ShortCard";
 
 export interface CoachState {
-    imgUrl : string,
     name: string,
-    description: string
+    description: string,
+    cardProp : CardProp
 }
 
 const initialState : CoachState = {
-    imgUrl: 'person.jpg',
     name: 'Nguyen An Han',
-    description : 'Co nhieu kinh nghiem trong con'
+    description : 'Co nhieu kinh nghiem trong con',
+    cardProp: {
+        imgUrl: 'person.jpg',
+        name : 'Nguyen An Han',
+        description : 'Co nhieu kinh nghiem trong con'
+    }
 }
 
 export const coachSlice = createSlice({
@@ -17,9 +22,6 @@ export const coachSlice = createSlice({
     initialState,
     reducers: {
         changeCoachInfo : (state, action: PayloadAction<CoachState>)=> {
-            state.imgUrl = action.payload.imgUrl
-            state.description = action.payload.description
-            state.name = action.payload.name
         },
 
     }

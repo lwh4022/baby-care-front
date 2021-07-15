@@ -1,25 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CardProp } from "../../components/card/ShortCard";
 
 export interface BabyInfoState {
     header: string
     content: string
-    imgUrl : string
+    cardProp : CardProp
 }
 
 const initialState : BabyInfoState = {
-    imgUrl: 'person.jpg',
     header: 'Header',
-    content: 'content'
+    content: 'content',
+    cardProp: {
+        imgUrl: 'person.jpg',
+        name: 'Header',
+        description : 'content'
+    }
 }
+
+
 
 export const babyInfoSlice = createSlice({
     name: 'coach',
     initialState,
     reducers: {
         changeBabyInfo : (state, action: PayloadAction<BabyInfoState>)=> {
-            state.imgUrl = action.payload.imgUrl
-            state.header = action.payload.header
-            state.content = action.payload.content
         },
 
     }
